@@ -1,11 +1,22 @@
-import demo from "./app";
+import Popover from '../popover';
 
-describe("Пример теста", () => {
-  test.each([
-    { str: "Hello!", expected: "Demo: Hello!" },
-    { str: "", expected: "Demo: " },
-    { str: 100, expected: "Demo: 100" },
-  ])("demo($str)", ({ str, expected }) => {
-    expect(demo(str)).toBe(expected);
+document.body.innerHTML = '<button class="popover-button">Click me</button>';
+
+describe('Popover', () => {
+  let button;
+  let popover;
+
+  beforeEach(() => {
+    button = document.querySelector('.popover-button');
+    popover = new Popover(button, 'Test Title', 'Test Content');
+  });
+
+  test('should create and remove popover on button click', () => {
+    button.click();
+    expect(document.querySelector('.popover')).not.toBeNull();
+
+    button.click();
+    expect(document.querySelector('.popover')).toBeNull();
   });
 });
+

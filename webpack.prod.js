@@ -8,3 +8,4 @@ module.exports = merge(common, {
     minimizer: [new CssMinimizerPlugin()],
   },
 });
+

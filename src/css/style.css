@@ -1,3 +1,84 @@
-body {
-    color: #999;
-}
+/* Основной стиль Popover */
+.popover {
+    position: absolute;
+    background: white;
+    border: 1px solid black;
+    padding: 10px;
+    width: 220px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+    display: none;
+  }
+  
+  /* Внутренний контейнер Popover */
+  .popover-inner {
+    position: relative;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: left; /* Выравнивание текста по левому краю */
+  }
+  
+  /* Заголовок Popover */
+  .popover-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* Заголовок тоже выравниваем по левому краю */
+  }
+  
+  /* Текст внутри Popover */
+  .popover-content {
+    font-size: 14px;
+    padding-top: 5px;
+    text-align: left; /* Выравнивание основного текста */
+  }
+  
+  /* Стрелка Popover */
+  .popover-arrow {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid black;
+    background: white;
+  }
+  
+  /* Маскировка границы стрелки */
+  .popover-arrow::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid white;
+  }
+  
+  /* Красная кнопка с белыми буквами */
+  .popover-button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin: 20px auto 0 auto;
+    text-align: center;
+  }
+  
+  /* Кнопка при наведении */
+  .popover-button:hover {
+    background-color: #c9302c;
+  }
+  

@@ -1,11 +1,15 @@
-// TODO: write code here
+import Popover from "../popover";
 
-// comment this to pass build
-const unusedVariable = "variable";
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM loaded"); // Проверяем, загружается ли JS
 
-// for demonstration purpose only
-export default function demo(value) {
-  return `Demo: ${value}`;
-}
+  const button = document.querySelector(".popover-button");
 
-console.log("app.js included");
+  if (button) {
+    console.log("Button found, initializing Popover"); // Проверка кнопки
+    new Popover(button, "Popover title", "And here's some amazing content. It's very engaging. Right?");
+  } else {
+    console.error("Button not found");
+  }
+});
+
